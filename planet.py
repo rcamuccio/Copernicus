@@ -2,14 +2,18 @@
 # -*- coding: utf-8 -*-
 
 """
-Copernicus
+Copernicus - Planet class
 
-Date: 19 Apr 2020
-Last update: 5 May 2020
+Version 1.0.0 - 19 Apr 2020
+	Added planet class
+
+Version 1.1.0 - 6 May 2020
+	Added star class
+
 """
 
 __author__ = "Richard Camuccio"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 import math
 
@@ -57,7 +61,7 @@ class Planet:
 		self.__x_velocity = 0
 		self.__y_velocity = 0
 
-	# Identification parameters
+	# Identification parameter methods
 	def __str__(self):
 		return self.__name
 
@@ -67,7 +71,7 @@ class Planet:
 	def set_name(self, name):
 		self.__name = name
 
-	# Bulk parameters
+	# Bulk parameter methods
 	def get_bond_albedo(self):
 		return self.__bond_albedo
 
@@ -127,8 +131,7 @@ class Planet:
 		self.__rotation_period = rotation_period
 
 	def get_standard_gravitational_parameter(self):
-		G = 6.6743e-11
-		mu = G * self.__mass
+		mu = 6.6743e-11 * self.__mass
 		return mu
 
 	def get_surface_area(self):
@@ -155,7 +158,7 @@ class Planet:
 	def set_volume(self, volume):
 		self.__volume = volume
 
-	# Orbital parameters
+	# Orbital parameter methods
 	def get_aphelion(self):
 		return self.__aphelion
 
@@ -222,7 +225,7 @@ class Planet:
 	def set_semimajor_axis(self, semimajor_axis):
 		self.__semimajor_axis = semimajor_axis
 	
-	# Satellite parameters
+	# Satellite parameter methods
 	def get_satellite_system(self):
 		return self.__satellites
 
@@ -232,7 +235,7 @@ class Planet:
 	def add_satellite(self, satellite):
 		self.__satellites.append(satellite)
 
-	# Coordinate parameters
+	# Coordinate parameter methods
 	def get_x_position(self):
 		return self.__x
 
@@ -263,34 +266,40 @@ class Planet:
 
 if __name__ == "__main__":
 
+	# Example planet
 	earth = Planet()
 
 	earth.set_bond_albedo(0.306)
-	earth.set_density(5514) 							# kg/m^3
-	earth.set_escape_velocity(11186) 					# m/s
+	earth.set_density(5514) # kg/m^3
+	earth.set_escape_velocity(11186) # m/s
 	earth.set_flattening(0.0033528)
 	earth.set_geometric_albedo(0.367)
-	earth.set_mass(5.97237e+24) 						# kg
+	earth.set_mass(5.97237e+24) # kg
 	earth.set_moment_of_inertia_factor(0.3307)
-	earth.set_radius(6371000)							# m
-	earth.set_rotation_period(86164.100352)				# s
-	earth.set_surface_area(5.10072000e+14)				# m^2
-	earth.set_surface_gravity(9.80665)					# m/s^2
-	earth.set_surface_temperature(287.16)				# K
-	earth.set_volume(1.08321e+21)						# m^3
+	earth.set_radius(6371000) # m
+	earth.set_rotation_period(86164.100352)	# s
+	earth.set_surface_area(5.10072000e+14) # m^2
+	earth.set_surface_gravity(9.80665) # m/s^2
+	earth.set_surface_temperature(287.16) # K
+	earth.set_volume(1.08321e+21) # m^3
 
-	earth.set_aphelion(1.521e+11)						# m
-	earth.set_argument_of_perihelion(114.20783)			# deg
+	earth.set_aphelion(1.521e+11) # m
+	earth.set_argument_of_perihelion(114.20783) # deg
 	earth.set_eccentricity(0.0167086)
-	earth.set_inclination(0.00005)						# deg to J2000 ecliptic
-	earth.set_longitude_of_ascending_node(-11.26064)	# deg to J2000 ecliptic
-	earth.set_mean_anomaly(358.617)						# deg
-	earth.set_obliquity(23.4392811)						# deg
-	earth.set_orbital_period(31558149.7635456)			# s
-	earth.set_orbital_speed(29780)						# m/s
-	earth.set_perihelion(1.47095e+11)					# m
-	earth.set_semimajor_axis(1.49598023e+11)			# m
+	earth.set_inclination(0.00005) # deg to J2000 ecliptic
+	earth.set_longitude_of_ascending_node(-11.26064) # deg to J2000 ecliptic
+	earth.set_mean_anomaly(358.617)	# deg
+	earth.set_obliquity(23.4392811)	# deg to ecliptic
+	earth.set_orbital_period(31558149.7635456) # s
+	earth.set_orbital_speed(29780) # m/s
+	earth.set_perihelion(1.47095e+11) # m
+	earth.set_semimajor_axis(1.49598023e+11) # m
 
+	earth.set_name("Earth")
+	name = earth.get_name()
+	print(" Planet: Earth")
+
+	print()
 	print("--- BULK PARAMETERS ---")
 
 	bond_albedo = earth.get_bond_albedo()
