@@ -201,22 +201,22 @@ if __name__ == "__main__":
 	sun = Star()
 
 	sun.set_circumference(4.379e+06) # km
-	sun.set_core_density(162.2) # g/cm^3
+	sun.set_core_density(1.622e+05) # kg/m^3
 	sun.set_core_temperature(1.57e+07) # K
 	sun.set_corona_temperature(5e+06) # K
-	sun.set_density(1.408) # g/cm^3
-	sun.set_escape_velocity(617.7) # km/s
+	sun.set_density(1408) # kg/m^3
+	sun.set_escape_velocity(6.177e+05) # m/s
 	sun.set_flattening(9e-06)
 	sun.set_luminosity(3.828e26) # W
 	sun.set_mass(1.9884e+30) # kg
 	sun.set_metallicity(0.0122)
 	sun.set_moment_of_inertia_factor(0.070)
-	sun.set_radius(69)
-	sun.set_rotation_period(25.05) # d
-	sun.set_surface_area(6.09e+12) # km^2
+	sun.set_radius(6.957e+08) # m
+	sun.set_rotation_period(2.16432e+06) # s
+	sun.set_surface_area(6.09e+15) # m^2
 	sun.set_surface_gravity(274) # m/s^2
 	sun.set_surface_temperature(5772) # K
-	sun.set_volume(1.41e+18) # km^3
+	sun.set_volume(1.41e+27) # m^3
 
 	sun.set_obliquity(7.25) # deg to ecliptic
 
